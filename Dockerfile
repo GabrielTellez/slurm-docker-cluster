@@ -86,7 +86,7 @@ RUN set -x \
 RUN pip install --upgrade pip
 RUN pip install numpy pandas
 
-RUN yum install dos2unix
+RUN yum install -y dos2unix
 
 COPY slurm.conf /etc/slurm/slurm.conf
 COPY slurmdbd.conf /etc/slurm/slurmdbd.conf
