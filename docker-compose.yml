@@ -25,7 +25,7 @@ services:
     expose:
       - "6819"
     depends_on:
-      - mysql
+      - "mysql"
 
   slurmctld:
     image: slurm-docker-cluster:19.05.1
@@ -62,6 +62,156 @@ services:
     command: ["slurmd"]
     hostname: c2
     container_name: c2
+    volumes:
+      - etc_munge:/etc/munge
+      - etc_slurm:/etc/slurm
+      - slurm_jobdir:/data
+      - var_log_slurm:/var/log/slurm
+    expose:
+      - "6818"
+    depends_on:
+      - "slurmctld"
+
+  c3:
+    image: slurm-docker-cluster:19.05.1
+    command: ["slurmd"]
+    hostname: c3
+    container_name: c3
+    volumes:
+      - etc_munge:/etc/munge
+      - etc_slurm:/etc/slurm
+      - slurm_jobdir:/data
+      - var_log_slurm:/var/log/slurm
+    expose:
+      - "6818"
+    depends_on:
+      - "slurmctld"
+
+  c4:
+    image: slurm-docker-cluster:19.05.1
+    command: ["slurmd"]
+    hostname: c4
+    container_name: c4
+    volumes:
+      - etc_munge:/etc/munge
+      - etc_slurm:/etc/slurm
+      - slurm_jobdir:/data
+      - var_log_slurm:/var/log/slurm
+    expose:
+      - "6818"
+    depends_on:
+      - "slurmctld"
+
+  c5:
+    image: slurm-docker-cluster:19.05.1
+    command: ["slurmd"]
+    hostname: c5
+    container_name: c5
+    volumes:
+      - etc_munge:/etc/munge
+      - etc_slurm:/etc/slurm
+      - slurm_jobdir:/data
+      - var_log_slurm:/var/log/slurm
+    expose:
+      - "6818"
+    depends_on:
+      - "slurmctld"
+
+  c6:
+    image: slurm-docker-cluster:19.05.1
+    command: ["slurmd"]
+    hostname: c6
+    container_name: c6
+    volumes:
+      - etc_munge:/etc/munge
+      - etc_slurm:/etc/slurm
+      - slurm_jobdir:/data
+      - var_log_slurm:/var/log/slurm
+    expose:
+      - "6818"
+    depends_on:
+      - "slurmctld"
+
+  c7:
+    image: slurm-docker-cluster:19.05.1
+    command: ["slurmd"]
+    hostname: c7
+    container_name: c7
+    volumes:
+      - etc_munge:/etc/munge
+      - etc_slurm:/etc/slurm
+      - slurm_jobdir:/data
+      - var_log_slurm:/var/log/slurm
+    expose:
+      - "6818"
+    depends_on:
+      - "slurmctld"
+
+  c8:
+    image: slurm-docker-cluster:19.05.1
+    command: ["slurmd"]
+    hostname: c8
+    container_name: c8
+    volumes:
+      - etc_munge:/etc/munge
+      - etc_slurm:/etc/slurm
+      - slurm_jobdir:/data
+      - var_log_slurm:/var/log/slurm
+    expose:
+      - "6818"
+    depends_on:
+      - "slurmctld"
+
+  c9:
+    image: slurm-docker-cluster:19.05.1
+    command: ["slurmd"]
+    hostname: c9
+    container_name: c9
+    volumes:
+      - etc_munge:/etc/munge
+      - etc_slurm:/etc/slurm
+      - slurm_jobdir:/data
+      - var_log_slurm:/var/log/slurm
+    expose:
+      - "6818"
+    depends_on:
+      - "slurmctld"
+
+  c10:
+    image: slurm-docker-cluster:19.05.1
+    command: ["slurmd"]
+    hostname: c10
+    container_name: c10
+    volumes:
+      - etc_munge:/etc/munge
+      - etc_slurm:/etc/slurm
+      - slurm_jobdir:/data
+      - var_log_slurm:/var/log/slurm
+    expose:
+      - "6818"
+    depends_on:
+      - "slurmctld"
+
+  c11:
+    image: slurm-docker-cluster:19.05.1
+    command: ["slurmd"]
+    hostname: c11
+    container_name: c11
+    volumes:
+      - etc_munge:/etc/munge
+      - etc_slurm:/etc/slurm
+      - slurm_jobdir:/data
+      - var_log_slurm:/var/log/slurm
+    expose:
+      - "6818"
+    depends_on:
+      - "slurmctld"
+
+  c12:
+    image: slurm-docker-cluster:19.05.1
+    command: ["slurmd"]
+    hostname: c12
+    container_name: c12
     volumes:
       - etc_munge:/etc/munge
       - etc_slurm:/etc/slurm

@@ -83,8 +83,16 @@ RUN set -x \
     && chown -R slurm:slurm /var/*/slurm* \
     && /sbin/create-munge-key
 
+RUN pip install --upgrade pip
+RUN pip install numpy pandas
+
+RUN yum install dos2unix
+
 COPY slurm.conf /etc/slurm/slurm.conf
 COPY slurmdbd.conf /etc/slurm/slurmdbd.conf
+
+RUN dos2unix /etc/slurm/slurm.conf
+RUN dos2unix /etc/slurm/slurmdbd.conf
 
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
